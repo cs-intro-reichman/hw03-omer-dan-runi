@@ -40,7 +40,16 @@ public class LoanCalc {
 	// Side effect: modifies the class variable iterationCounter.
     public static double bruteForceSolver(double loan, double rate, int n, double epsilon) {  
     	// Replace the following statement with your code
-    	return 0;
+		iterationCounter = 0;
+    	double bruteForcePayment = loan / n;
+    	bruteForcePayment += epsilon;
+    	while(endBalance(loan, rate, n, bruteForcePayment) > 0)
+    	{
+    		bruteForcePayment += epsilon;
+    		iterationCounter++;
+    	}
+
+    	return bruteForcePayment;
     }
     
     /**
@@ -52,7 +61,37 @@ public class LoanCalc {
 	// Side effect: modifies the class variable iterationCounter.
     public static double bisectionSolver(double loan, double rate, int n, double epsilon) {  
     	// Replace the following statement with your code
-    	return 0;
+    	// Sets L and H to initial values such that 𝑓(𝐿) > 0, 𝑓(𝐻) < 0,
+		iterationCounter = 0;
+		double L = 0;
+        double H = loan / n;
+
+        // Set initial guess g to the middle of L and H
+        double g = (L + H) / 2;
+
+        while ((H - L) > epsilon) {
+            iterationCounter++;
+
+            // Compute the values of the function at g, L and H
+            double fG = endBalance(loan, rate, n, g);
+            double fLo = endBalance(loan, rate, n, L);
+            double fHi = endBalance(loan, rate, n, H);
+
+            // Check the sign of the product of fG and fLo (or fG and fHi)
+            if (fG * fLo > 0) {
+                // Solution is between g and H
+                L = g;
+            } else {
+                // Solution is between L and g
+                H = g;
+            }
+
+            // Update g for the next iteration
+            g = (L + H) / 2;
+        }
+
+        // Return the approximate solution
+        return g;
     }
 	
 	/**
@@ -61,6 +100,11 @@ public class LoanCalc {
 	*/
 	private static double endBalance(double loan, double rate, int n, double payment) {
 		// Replace the following statement with your code
-    	return 0;
+		for (int i = 0; i < n; i++)
+		{
+			loan = (loan - payment) * rate;
+		}
+
+    	return loan;
 	}
 }

@@ -12,6 +12,29 @@ public class UniqueChars {
      */
     public static String uniqueChars(String s) {
         // Replace the following statement with your code
-        return null;
+        char currentChar = s.charAt(0);
+        String unique = "" + currentChar;
+
+        boolean flag = true;
+        for (int i = 1; i < s.length(); i++)
+        {
+            currentChar = s.charAt(i);
+
+             for (int j = 0; j < unique.length(); j++)
+             {
+                if (unique.charAt(j) == currentChar)
+                {
+                    flag = false;
+                    break;
+                }
+             }
+
+             if (flag == true || currentChar == ' ')
+             {
+                unique = unique + currentChar;
+             }
+             flag = true;
+        }
+        return unique;
     }
 }

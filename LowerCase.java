@@ -21,7 +21,7 @@ public class LowerCase {
             charAscii = (int) currentChar;
 
             // if the current char ascii represents a capital letter
-            if (charAscii < 90 && charAscii > 65)
+            if (charAscii <= 90 && charAscii >= 65)
             {
                 // the difference in the ascii table for representing lower case letters
                 // from its upper case equivelant

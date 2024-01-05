@@ -27,7 +27,7 @@ public class Calendar0 {
 		int leapYear = 2000;
 		int curMonth = 2;
 
-		for (int i = 1; 1<=12; i++)
+		for (int i = 1; i <= 12; i++)
 		{
 			System.out.println("Month " + i +" has " +  nDaysInMonth(i, commonYear) +" days");
 		}

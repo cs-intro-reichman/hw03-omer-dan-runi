@@ -29,7 +29,7 @@ public class Calendar0 {
 
 		for (int i = 1; i <= 12; i++)
 		{
-			System.out.println("Month " + i +" has " +  nDaysInMonth(i, year)) +" days");
+			System.out.println("Month " + i +" has " +  nDaysInMonth(i, year) +" days");
 		}
 
 		// int nDaysInMonthTestCommon = nDaysInMonth(feb, commonYear);

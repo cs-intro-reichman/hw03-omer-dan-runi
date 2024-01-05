@@ -12,8 +12,6 @@ public class Calendar1 {
 
     static boolean lastDay = false;
 
-    // this day is a monday
-	
 	/** 
 	 * Prints the calendars of all the years in the 20th century. Also prints the  
 	 * number of Sundays that occured on the first day of the month during this period.
@@ -28,7 +26,7 @@ public class Calendar1 {
 	 	{
 	 		if (dayOfWeek == 1)
 	 		{
-	 			System.out.println(dayOfMonth + "/" + month + "/" + year + " Sunday");
+	 			// System.out.println(dayOfMonth + "/" + month + "/" + year + " Sunday");
 	 			if (dayOfMonth == 1)
 	 			{
 	 				specialSundayCount++;
@@ -36,7 +34,7 @@ public class Calendar1 {
 	 		}
 	 		else
 	 		{
-	 			System.out.println(dayOfMonth + "/" + month + "/" + year);
+	 			// System.out.println(dayOfMonth + "/" + month + "/" + year);
 	 		}
 
 	 		advance();
@@ -44,6 +42,7 @@ public class Calendar1 {
 	 		debugDaysCounter++;
         }
 	 	//// Write the necessary ending code here
+		System.out.println("During the 20th century, " + specialSundayCount + " Sundays fell on the first day of the month")
 	 }
 	
 	 // Advances the date (day, month, year) and the day-of-the-week.

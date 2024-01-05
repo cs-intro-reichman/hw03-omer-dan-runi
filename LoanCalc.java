@@ -46,9 +46,6 @@ public class LoanCalc {
 
     	while(endBalance(loan, rate, n, bruteForcePayment) > epsilon)
     	{
-			loan = loan - bruteForcePayment; // Subtract the payment from the loan
-        	loan = loan * (1 + rate); // Apply the interest
-
     		bruteForcePayment += epsilon;
     		iterationCounter++;
     	}

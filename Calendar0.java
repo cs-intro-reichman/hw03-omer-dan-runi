@@ -23,13 +23,13 @@ public class Calendar0 {
 	// Tests the nDaysInMonth function.
 	private static void nDaysInMonthTest(int year) {
 		// Replace this comment with your code
-		int commonYear = 2001;
-		int leapYear = 2000;
-		int curMonth = 2;
+		// int commonYear = 2001;
+		// int leapYear = 2000;
+		// int curMonth = 2;
 
 		for (int i = 1; i <= 12; i++)
 		{
-			System.out.println("Month " + i +" has " +  nDaysInMonth(i, commonYear) +" days");
+			System.out.println("Month " + i +" has " +  nDaysInMonth(i, isLeapYear(year)) +" days");
 		}
 
 		// int nDaysInMonthTestCommon = nDaysInMonth(feb, commonYear);

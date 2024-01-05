@@ -42,7 +42,7 @@ public class LoanCalc {
     	// Replace the following statement with your code
 		iterationCounter = 0;
     	double bruteForcePayment = loan / n;
-    	bruteForcePayment += epsilon;
+    	// bruteForcePayment += epsilon;
 
     	while(endBalance(loan, rate, n, bruteForcePayment) > epsilon)
     	{
@@ -68,7 +68,7 @@ public class LoanCalc {
     	// Sets L and H to initial values such that 𝑓(𝐿) > 0, 𝑓(𝐻) < 0,
 		iterationCounter = 0;
 		double L = 0;
-        double H = loan / n;
+        double H = loan;
 
         // Set initial guess g to the middle of L and H
         double g = (L + H) / 2;
@@ -97,18 +97,15 @@ public class LoanCalc {
         // Return the approximate solution
         return g;
     }
-	
+
 	/**
 	* Computes the ending balance of a loan, given the sum of the loan, the periodical
 	* interest rate (as a percentage), the number of periods (n), and the periodical payment.
 	*/
 	private static double endBalance(double loan, double rate, int n, double payment) {
-		// Replace the following statement with your code
-		for (int i = 0; i < n; i++)
-		{
-			loan = (loan - payment) * (1+ rate);
-		}
-
-    	return loan;
-	}
+        for (int i = 0; i < n; i++) {
+            loan = (loan - payment) * (1 + rate);
+        }
+        return loan;
+    }
 }

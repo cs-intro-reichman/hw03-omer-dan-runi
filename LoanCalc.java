@@ -43,17 +43,18 @@ public class LoanCalc {
 		iterationCounter = 0;
     	double bruteForcePayment = loan / n;
     	bruteForcePayment += epsilon;
-    	while(endBalance(loan, rate, n, bruteForcePayment) > 0)
+
+    	while(endBalance(loan, rate, n, bruteForcePayment) > epsilon)
     	{
 			loan = loan - bruteForcePayment; // Subtract the payment from the loan
         	loan = loan * (1 + rate); // Apply the interest
+
     		bruteForcePayment += epsilon;
     		iterationCounter++;
     	}
 
     	return bruteForcePayment;
     }
-
     
     /**
 	* Uses bisection search to compute an approximation of the periodical payment 

@@ -25,13 +25,18 @@ public class Calendar0 {
 		// Replace this comment with your code
 		int commonYear = 2001;
 		int leapYear = 2000;
-		int feb = 2;
+		int curMonth = 2;
 
-		int nDaysInMonthTestCommon = nDaysInMonth(feb, commonYear);
-		int nDaysInMonthTestLeap = nDaysInMonth(feb, leapYear);
+		for (int i = 1; 1<=12; i++)
+		{
+			System.out.println("Month " + i +" has " +  nDaysInMonth(i, commonYear) +" days");
+		}
 
-		System.out.println("feburary in a common Year has " + nDaysInMonthTestCommon + " days");
-		System.out.println("feburary in a leap Year has " + nDaysInMonthTestLeap + " days");
+		// int nDaysInMonthTestCommon = nDaysInMonth(feb, commonYear);
+		// int nDaysInMonthTestLeap = nDaysInMonth(feb, leapYear);
+
+		// System.out.println("feburary in a common Year has " + nDaysInMonthTestCommon + " days");
+		// System.out.println("feburary in a leap Year has " + nDaysInMonthTestLeap + " days");
 	}
 
 	// Returns true if the given year is a leap year, false otherwise.

@@ -106,7 +106,7 @@ public class LoanCalc {
 		// Replace the following statement with your code
 		for (int i = 0; i < n; i++)
 		{
-			loan = (loan - payment) * rate;
+			loan = (loan - payment) * (1+ rate);
 		}
 
     	return loan;

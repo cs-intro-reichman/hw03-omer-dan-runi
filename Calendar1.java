@@ -42,7 +42,7 @@ public class Calendar1 {
 	 		debugDaysCounter++;
         }
 	 	//// Write the necessary ending code here
-		System.out.println("During the 20th century, " + specialSundayCount + " Sundays fell on the first day of the month")
+		System.out.println("During the 20th century, " + specialSundayCount + " Sundays fell on the first day of the month");
 	 }
 	
 	 // Advances the date (day, month, year) and the day-of-the-week.
